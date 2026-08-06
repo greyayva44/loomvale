@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Science+Gothic:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+  html, body { margin: 0; padding: 0; background: #F9FEFF; scroll-behavior: smooth; }
+  * { box-sizing: border-box; }
+  a { color: #020403; text-decoration: none; }
+  a:hover { color: #020403; text-decoration: underline; }
+  ::selection { background: #020403; color: #F9FEFF; }
+  @keyframes lv-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+</style>
+</helmet>
+
+<div style="font-family: Geist, system-ui, sans-serif; color: #020403; background: #F9FEFF; overflow-x: hidden">
+
+  <!-- HERO + NAV -->
+  <div style="position: relative; min-height: 100vh; display: flex; flex-direction: column; background: linear-gradient(180deg, #F9FEFF 0%, #F1F3F3 26%, #9EA3A3 62%, #3B4040 86%, #141817 100%)">
+    <div style="position: absolute; inset: 0; pointer-events: none; mix-blend-mode: overlay; background-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%224%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22/%3E%3C/svg%3E'); opacity: {{ grain }}"></div>
+
+    <header style="position: sticky; top: 0; z-index: 20; display: flex; align-items: center; justify-content: space-between; gap: 32px; padding: 26px clamp(20px, 5vw, 64px)">
+      <a href="#top" style="display: flex; align-items: center"><img src="uploads/logoloomvale.svg" alt="loomvale." style="height: 21px; width: auto; display: block"></a>
+      <nav style="display: flex; align-items: center; gap: clamp(20px, 3vw, 44px)">
+        <a href="#services" style="font-size: 21px; font-weight: 700; letter-spacing: -0.01em; text-decoration: none" style-hover="text-decoration: underline; text-underline-offset: 4px">services</a>
+        <a href="#about" style="font-size: 21px; font-weight: 700; letter-spacing: -0.01em; text-decoration: none" style-hover="text-decoration: underline; text-underline-offset: 4px">about</a>
+        <a href="#contact" style="font-size: 21px; font-weight: 700; letter-spacing: -0.01em; text-decoration: none" style-hover="text-decoration: underline; text-underline-offset: 4px">contact</a>
+      </nav>
+    </header>
+
+    <div style="position: relative; z-index: 2; flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: clamp(60px, 9vh, 120px) clamp(20px, 5vw, 64px) clamp(70px, 10vh, 130px)">
+      <h1 style="font-family: 'Science Gothic', 'Geist', sans-serif; font-style: italic; font-weight: 300; font-size: clamp(32.3px, 5.61vw, 78.2px); line-height: 1.14; letter-spacing: -0.02em; margin: 0; max-width: 15ch; text-wrap: balance; color: #020403">Brand, website and product design for early-stage startups.</h1>
+      <a href="mailto:loomvale@proton.me" style="margin-top: clamp(32px, 5vh, 54px); display: inline-flex; align-items: center; justify-content: center; padding: 17px 34px; border-radius: 14px; background: #020403; color: #F9FEFF; font-size: 15px; font-weight: 500; letter-spacing: -0.01em; text-decoration: none; transition: background 220ms ease" style-hover="background: rgba(14, 14, 14, 0.8); text-decoration: none">Get in touch</a>
+    </div>
+  </div>
+
+  <!-- TRUSTED BY -->
+  <section style="background: #020403; color: #F9FEFF; padding: 26px 0; overflow: hidden">
+    <div style="display: flex; align-items: center; gap: clamp(20px, 4vw, 48px)">
+      <span style="flex: none; padding-left: clamp(20px, 5vw, 64px); font-size: 14px; font-weight: 700; letter-spacing: -0.01em; white-space: nowrap">Trusted by:</span>
+      <div style="flex: 1; overflow: hidden; position: relative; mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent)">
+        <div style="display: flex; width: max-content; align-items: center; gap: clamp(40px, 6vw, 84px); animation: lv-marquee linear infinite; animation-duration: {{ marqueeDur }}">
+          <img src="uploads/logo1.png" alt="Porsche" style="height: 26px; width: auto; opacity: 0.92; display: block; flex: none">
+          <img src="uploads/logo2.png" alt="Richard Mille" style="height: 24px; width: auto; opacity: 0.92; display: block; flex: none">
+          <img src="uploads/logo3.png" alt="ShapeShift" style="height: 28px; width: auto; opacity: 0.92; display: block; flex: none">
+          <img src="uploads/logo4.png" alt="BMW Bank" style="height: 26px; width: auto; opacity: 0.92; display: block; flex: none">
+          <img src="uploads/logo5.png" alt="Binance" style="height: 24px; width: auto; opacity: 0.92; display: block; flex: none">
+          <img src="uploads/logo6.png" alt="International Community" style="height: 34px; width: auto; opacity: 0.92; display: block; flex: none">
+          <img src="uploads/logo1.png" alt="" style="height: 26px; width: auto; opacity: 0.92; display: block; flex: none">
+          <img src="uploads/logo2.png" alt="" style="height: 24px; width: auto; opacity: 0.92; display: block; flex: none">
+          <img src="uploads/logo3.png" alt="" style="height: 28px; width: auto; opacity: 0.92; display: block; flex: none">
+          <img src="uploads/logo4.png" alt="" style="height: 26px; width: auto; opacity: 0.92; display: block; flex: none">
+          <img src="uploads/logo5.png" alt="" style="height: 24px; width: auto; opacity: 0.92; display: block; flex: none">
+          <img src="uploads/logo6.png" alt="" style="height: 34px; width: auto; opacity: 0.92; display: block; flex: none">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" style="max-width: 1240px; margin: 0 auto; padding: clamp(84px, 11vw, 150px) clamp(20px, 5vw, 64px); display: flex; flex-wrap: wrap; gap: clamp(32px, 6vw, 90px)">
+    <div style="flex: 1 1 320px; min-width: 260px">
+      <span style="display: inline-flex; align-items: center; gap: 9px; padding: 10px 20px; border-radius: 999px; background: rgba(2, 4, 3, 0.06); font-size: 13px; font-weight: 500; color: rgba(2, 4, 3, 0.72)"><span style="width: 6px; height: 6px; border-radius: 50%; background: #020403; display: block"></span>About</span>
+      <h2 style="font-family: 'Science Gothic', 'Geist', sans-serif; font-style: italic; font-weight: 300; font-size: clamp(32px, 4.4vw, 60px); line-height: 1.12; letter-spacing: -0.02em; margin: 14px 0 0">Complexity made obvious.</h2>
+    </div>
+    <div style="flex: 1 1 360px; min-width: 280px; max-width: 620px; display: flex; align-items: flex-end">
+      <p style="margin: 0; font-size: clamp(16px, 1.3vw, 19px); line-height: 1.62; color: rgba(2, 4, 3, 0.68); text-wrap: pretty">We work with technical founders who have built something genuinely hard, and help them say it plainly. Visual identity, interface and the content engine around it. Loomvale makes the work read as inevitable rather than experimental.</p>
+    </div>
+  </section>
+
+  <!-- INDUSTRIES -->
+  <section style="max-width: 1240px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 64px) clamp(84px, 11vw, 150px)">
+    <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-bottom: clamp(36px, 5vw, 60px)">
+      <span style="display: inline-flex; align-items: center; gap: 9px; padding: 10px 20px; border-radius: 999px; background: rgba(2, 4, 3, 0.06); font-size: 13px; font-weight: 500; color: rgba(2, 4, 3, 0.72)"><span style="width: 6px; height: 6px; border-radius: 50%; background: #020403; display: block"></span>Industries</span>
+      <span style="display: inline-flex; align-items: center; padding: 11px 24px; border-radius: 999px; background: rgba(2, 4, 3, 0.06); font-size: clamp(18px, 2.4vw, 28px); font-weight: 500; letter-spacing: -0.02em">Working with founders:</span>
+    </div>
+    <div style="display: flex; gap: clamp(18px, 4vw, 64px); align-items: stretch">
+      <div style="flex: 1 1 44%; display: flex; flex-direction: column; justify-content: center; gap: clamp(10px, 1.6vw, 20px)">
+        <sc-for list="{{ industries }}" as="ind" hint-placeholder-count="5">
+          <button type="button" onClick="{{ ind.select }}" onMouseEnter="{{ ind.select }}" style="{{ ind.style }}">{{ ind.name }}</button>
+        </sc-for>
+      </div>
+      <div style="flex: 1 1 56%; position: relative; border-radius: 20px; overflow: hidden; background: rgba(2, 4, 3, 0.00); min-height: clamp(240px, 34vw, 460px)">
+        <div style="position: absolute; inset: 0; transition: opacity 380ms ease; opacity: {{ panel.robotics }}"><image-slot id="lv-robotics" shape="rect" src="uploads/card.png" placeholder="Robotics — product photo"></image-slot></div>
+        <div style="position: absolute; inset: 0; transition: opacity 380ms ease; opacity: {{ panel.ai }}"><image-slot id="lv-ai" shape="rect" src="uploads/star.png" placeholder="AI — abstract particle graphic"></image-slot></div>
+        <div style="position: absolute; inset: 0; transition: opacity 380ms ease; opacity: {{ panel.biotech }}"><image-slot id="lv-biotech" shape="rect" src="uploads/pill.png" placeholder="Biotech — lab imagery"></image-slot></div>
+        <div style="position: absolute; inset: 0; transition: opacity 380ms ease; opacity: {{ panel.energy }}"><image-slot id="lv-energy" shape="rect" src="uploads/coin.png" placeholder="Energy — site photo"></image-slot></div>
+        <div style="position: absolute; inset: 0; transition: opacity 380ms ease; opacity: {{ panel.deeptech }}"><image-slot id="lv-deeptech" shape="rect" src="uploads/ssd.png" placeholder="Deep Tech — hardware detail"></image-slot></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" style="max-width: 1240px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 64px) clamp(84px, 11vw, 150px)">
+    <div style="display: flex; flex-wrap: wrap; align-items: center; gap: clamp(20px, 4vw, 56px); margin-bottom: clamp(36px, 5vw, 60px)">
+      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px">
+        <span style="display: inline-flex; align-items: center; gap: 9px; padding: 10px 20px; border-radius: 999px; background: rgba(2, 4, 3, 0.06); font-size: 13px; font-weight: 500; color: rgba(2, 4, 3, 0.72)"><span style="width: 6px; height: 6px; border-radius: 50%; background: #020403; display: block"></span>Services</span>
+        <span style="display: inline-flex; align-items: center; padding: 11px 24px; border-radius: 999px; background: rgba(2, 4, 3, 0.06); font-size: clamp(18px, 2.4vw, 28px); font-weight: 500; letter-spacing: -0.02em">Assisting with:</span>
+      </div>
+      <p style="flex: 1 1 340px; max-width: 460px; margin: 0; font-size: 16px; line-height: 1.6; color: rgba(2, 4, 3, 0.6); text-wrap: pretty">Three engagements that compound: the interface you interract with, the system that builds it, and the steady output that keeps it in front of the people who fund, buy and join.</p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: clamp(16px, 2vw, 24px)">
+      <article style="background: rgba(2, 4, 3, 0.06); border-radius: 22px; padding: clamp(24px, 2.4vw, 34px); display: flex; flex-direction: column; min-height: 380px">
+        <div style="display: flex; align-items: flex-start; justify-content: space-between">
+          <span style="width: 7px; height: 7px; border-radius: 50%; background: #020403; display: block; margin-top: 6px"></span>
+          <span style="font-size: 15px; font-weight: 300; color: rgba(2, 4, 3, 0.3); letter-spacing: 0.04em">01</span>
+        </div>
+        <h3 style="font-size: clamp(21px, 2vw, 26px); font-weight: 500; letter-spacing: -0.02em; margin: clamp(40px, 6vw, 72px) 0 12px">UI/UX</h3>
+        <p style="margin: 0 0 26px; font-size: 15px; line-height: 1.58; color: rgba(2, 4, 3, 0.62); text-wrap: pretty">We design clear, structured interfaces that give complex technologies clarity through precise logic, language, and user-centric design.</p>
+        <ul style="list-style: none; margin: auto 0 0; padding: 0; display: flex; flex-direction: column; gap: 10px; border-top: 1px solid rgba(2, 4, 3, 0.1); padding-top: 20px">
+          <li style="font-size: 14px; color: rgba(2, 4, 3, 0.78)">Screens and user flows</li>
+          <li style="font-size: 14px; color: rgba(2, 4, 3, 0.78)">Flexible timings</li>
+          <li style="font-size: 14px; color: rgba(2, 4, 3, 0.78)">Starting at $6,900</li>
+        </ul>
+      </article>
+      <article style="background: rgba(2, 4, 3, 0.06); border-radius: 22px; padding: clamp(24px, 2.4vw, 34px); display: flex; flex-direction: column; min-height: 380px">
+        <div style="display: flex; align-items: flex-start; justify-content: space-between">
+          <span style="width: 7px; height: 7px; border-radius: 50%; background: #020403; display: block; margin-top: 6px"></span>
+          <span style="font-size: 15px; font-weight: 300; color: rgba(2, 4, 3, 0.3); letter-spacing: 0.04em">02</span>
+        </div>
+        <h3 style="font-size: clamp(21px, 2vw, 26px); font-weight: 500; letter-spacing: -0.02em; margin: clamp(40px, 6vw, 72px) 0 12px">Visual Identity</h3>
+        <p style="margin: 0 0 26px; font-size: 15px; line-height: 1.58; color: rgba(2, 4, 3, 0.62); text-wrap: pretty">We build design systems that define your brand's appearance and translate your products value in a consistent and compelling way.</p>
+        <ul style="list-style: none; margin: auto 0 0; padding: 0; display: flex; flex-direction: column; gap: 10px; border-top: 1px solid rgba(2, 4, 3, 0.1); padding-top: 20px">
+          <li style="font-size: 14px; color: rgba(2, 4, 3, 0.78)">Brand Guidelines and Landing page</li>
+          <li style="font-size: 14px; color: rgba(2, 4, 3, 0.78)">In 10 business days</li>
+          <li style="font-size: 14px; color: rgba(2, 4, 3, 0.78)">Starting at $1,900</li>
+        </ul>
+      </article>
+      <article style="background: rgba(2, 4, 3, 0.06); border-radius: 22px; padding: clamp(24px, 2.4vw, 34px); display: flex; flex-direction: column; min-height: 380px">
+        <div style="display: flex; align-items: flex-start; justify-content: space-between">
+          <span style="width: 7px; height: 7px; border-radius: 50%; background: #020403; display: block; margin-top: 6px"></span>
+          <span style="font-size: 15px; font-weight: 300; color: rgba(2, 4, 3, 0.3); letter-spacing: 0.04em">03</span>
+        </div>
+        <h3 style="font-size: clamp(21px, 2vw, 26px); font-weight: 500; letter-spacing: -0.02em; margin: clamp(40px, 6vw, 72px) 0 12px">Social Media</h3>
+        <p style="margin: 0 0 26px; font-size: 15px; line-height: 1.58; color: rgba(2, 4, 3, 0.62); text-wrap: pretty">A monthly content plan for platforms of your choice, explaining your technology and spreading brand awareness.</p>
+        <ul style="list-style: none; margin: auto 0 0; padding: 0; display: flex; flex-direction: column; gap: 10px; border-top: 1px solid rgba(2, 4, 3, 0.1); padding-top: 20px">
+          <li style="font-size: 14px; color: rgba(2, 4, 3, 0.78)">Content Creation and Strategy</li>
+          <li style="font-size: 14px; color: rgba(2, 4, 3, 0.78)">Monthly Outputs</li>
+          <li style="font-size: 14px; color: rgba(2, 4, 3, 0.78)">Starting at $1,200</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- MANIFESTO -->
+  <section style="position: relative; background: #020403; color: #F9FEFF; overflow: hidden">
+    <div style="position: absolute; inset: 0; pointer-events: none; mix-blend-mode: overlay; background-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22n2%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%224%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n2)%22/%3E%3C/svg%3E'); opacity: {{ grain }}"></div>
+    <div style="position: relative; z-index: 2; max-width: 1240px; margin: 0 auto; padding: clamp(84px, 11vw, 150px) clamp(20px, 5vw, 64px); display: flex; flex-wrap: wrap; gap: clamp(32px, 6vw, 90px); align-items: flex-end">
+      <div style="flex: 1 1 480px">
+        <span style="display: inline-flex; align-items: center; gap: 9px; padding: 10px 20px; border-radius: 999px; background: rgba(228, 228, 228, 0.76); font-size: 13px; font-weight: 500; color: rgba(2, 4, 3, 0.72)"><span style="width: 6px; height: 6px; border-radius: 50%; background: #020403; display: block"></span>Manifesto</span>
+        <h2 style="font-family: 'Science Gothic', 'Geist', sans-serif; font-style: italic; font-weight: 300; font-size: clamp(32px, 4.8vw, 66px); line-height: 1.1; letter-spacing: -0.02em; margin: 16px 0 0; max-width: 22ch">Engineers build the future. <br>Creatives build the anticipation.</h2>
+      </div>
+      <div style="flex: 1 1 300px; max-width: 420px; display: flex; flex-direction: column; gap: 26px; align-items: flex-start">
+        <p style="margin: 0; font-size: 17px; line-height: 1.6; color: rgba(249, 254, 255, 0.66); text-wrap: pretty">At loomvale, we believe that every breakthrough deserves a compelling visual story. Our mission is to bridge the gap between innovation and audience, ensuring that your product communicates its value effectively.
+        </p>
+        <a href="mailto:loomvale@proton.me" style="display: inline-flex; align-items: center; padding: 16px 32px; border-radius: 14px; background: #F9FEFF; color: #020403; font-size: 15px; font-weight: 500; text-decoration: none; transition: opacity 200ms ease" style-hover="opacity: 0.86; text-decoration: none; color: #020403">Get to know us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT CTA -->
+  <section id="contact" style="text-align: center; padding: clamp(96px, 13vw, 180px) clamp(20px, 5vw, 64px); display: flex; flex-direction: column; align-items: center; gap: clamp(30px, 4vw, 46px)">
+    <h2 style="font-family: 'Science Gothic', 'Geist', sans-serif; font-style: italic; font-weight: 300; font-size: clamp(32px, 5.4vw, 74px); line-height: 1.1; letter-spacing: -0.02em; margin: 0; max-width: 20ch">Ready to draw attention to your product?</h2>
+    <a href="mailto:loomvale@proton.me" style="display: inline-flex; align-items: center; padding: 18px 36px; border-radius: 14px; background: #020403; color: #F9FEFF; font-size: 15px; font-weight: 500; text-decoration: none; transition: opacity 200ms ease" style-hover="opacity: 0.86; text-decoration: none; color: #F9FEFF">Start the conversation</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background: #020403; color: #F9FEFF; padding: clamp(56px, 7vw, 92px) clamp(20px, 5vw, 64px) 28px">
+    <div style="max-width: 1240px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: clamp(36px, 6vw, 96px)">
+      <div style="flex: 1 1 260px">
+        <img src="uploads/logoloomvale.svg" alt="loomvale." style="height: 24px; width: auto; display: block; filter: invert(1)">
+        <p style="margin: 20px 0 0; max-width: 260px; font-size: 14px; line-height: 1.6; color: rgba(249, 254, 255, 0.5)">Packaging and selling hard technology.</p>
+      </div>
+      <div style="flex: 0 1 160px">
+        <div style="font-size: 13px; font-weight: 700; margin-bottom: 16px">Locations</div>
+        <div style="display: flex; flex-direction: column; gap: 10px; font-size: 14px; color: rgba(249, 254, 255, 0.6)">
+          <span>Berlin</span><span>Vienna</span><span>Bratislava</span>
+        </div>
+      </div>
+      <div style="flex: 0 1 160px">
+        <div style="font-size: 13px; font-weight: 700; margin-bottom: 16px">Navigate</div>
+        <div style="display: flex; flex-direction: column; gap: 10px; font-size: 14px">
+          <a href="#services" style="color: rgba(249, 254, 255, 0.6); text-decoration: none" style-hover="color: #F9FEFF; text-decoration: underline">Services</a>
+          <a href="#about" style="color: rgba(249, 254, 255, 0.6); text-decoration: none" style-hover="color: #F9FEFF; text-decoration: underline">About</a>
+          <a href="#contact" style="color: rgba(249, 254, 255, 0.6); text-decoration: none" style-hover="color: #F9FEFF; text-decoration: underline">Contact</a>
+        </div>
+      </div>
+      <div style="flex: 0 1 160px">
+        <div style="font-size: 13px; font-weight: 700; margin-bottom: 16px">Touch Points</div>
+        <div style="display: flex; flex-direction: column; gap: 10px; font-size: 14px">
+          <a href="https://www.instagram.com/loomvale.xyz" style="color: rgba(249, 254, 255, 0.6); text-decoration: none" style-hover="color: #F9FEFF; text-decoration: underline">Instagram</a>
+          <a href="https://t.me/olhaprihod" style="color: rgba(249, 254, 255, 0.6); text-decoration: none" style-hover="color: #F9FEFF; text-decoration: underline">Telegram</a>
+          <a href="mailto:loomvale@proton.me" style="color: rgba(249, 254, 255, 0.6); text-decoration: none" style-hover="color: #F9FEFF; text-decoration: underline">Email</a>
+        </div>
+      </div>
+    </div>
+    <div style="max-width: 1240px; margin: clamp(48px, 6vw, 76px) auto 0; padding-top: 22px; border-top: 1px solid rgba(249, 254, 255, 0.14); display: flex; flex-wrap: wrap; gap: 16px 28px; align-items: center; justify-content: space-between; font-size: 13px; color: rgba(249, 254, 255, 0.44)">
+      <span>© 2026 Loomvale. All rights reserved.</span>
+      <div style="display: flex; flex-wrap: wrap; gap: 24px">
+        <a href="https://www.loomvale.xyz/cookie-policy" style="color: #020403; text-decoration: none" style-hover="color: #F9FEFF; text-decoration: underline">Cookie policy</a>
+        <a href="https://www.loomvale.xyz/terms" style="color: #020403; text-decoration: none" style-hover="color: #F9FEFF; text-decoration: underline">Terms</a>
+        <a href="https://www.loomvale.xyz/privacy" style="color: #020403; text-decoration: none" style-hover="color: #F9FEFF; text-decoration: underline">Privacy</a>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;grain&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:0.42,&quot;min&quot;:0,&quot;max&quot;:1,&quot;step&quot;:0.02,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Texture&quot;},&quot;marqueeSeconds&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:34,&quot;min&quot;:12,&quot;max&quot;:80,&quot;step&quot;:2,&quot;unit&quot;:&quot;s&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Motion&quot;},&quot;autoRotate&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;}}">
+const NAMES = [
+  ["FinTech", "robotics"],
+  ["AI", "ai"],
+  ["BioTech", "biotech"],
+  ["Blockchain", "energy"],
+  ["Big Data", "deeptech"]
+];
+
+class Component extends DCLogic {
+  state = { active: 1, paused: false };
+
+  componentDidMount() {
+    this.timer = setInterval(() => {
+      if (this.props.autoRotate === false || this.state.paused) return;
+      this.setState(s => ({ active: (s.active + 1) % NAMES.length }));
+    }, 3200);
+  }
+
+  componentWillUnmount() { clearInterval(this.timer); }
+
+  renderVals() {
+    const active = this.state.active;
+    const panel = {};
+    NAMES.forEach(([, key], i) => { panel[key] = i === active ? 1 : 0; });
+
+    const industries = NAMES.map(([name], i) => ({
+      name,
+      select: () => this.setState({ active: i, paused: true }),
+      style: [
+        "appearance: none",
+        "background: none",
+        "border: 0",
+        "padding: 0",
+        "margin: 0",
+        "cursor: pointer",
+        "text-align: left",
+        "font-family: inherit",
+        "letter-spacing: -0.02em",
+        "line-height: 1.15",
+        "transition: color 260ms ease, font-weight 260ms ease",
+        "font-size: clamp(24px, 4.2vw, 54px)",
+        i === active ? "font-weight: 500" : "font-weight: 400",
+        i === active ? "color: #020403" : "color: rgba(2, 4, 3, 0.26)"
+      ].join("; ")
+    }));
+
+    return {
+      industries,
+      panel,
+      grain: this.props.grain ?? 0.42,
+      marqueeDur: (this.props.marqueeSeconds ?? 34) + "s"
+    };
+  }
+}
+</script>
+</body>
+</html>
