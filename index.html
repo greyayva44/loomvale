@@ -19,6 +19,15 @@
   a { color: #020403; text-decoration: none; }
   a:hover { color: #020403; text-decoration: underline; }
   ::selection { background: #020403; color: #F9FEFF; }
+  .nav-toggle { display: none; }
+  .nav-links { display: flex; align-items: center; gap: clamp(20px, 3vw, 44px); }
+  @media (max-width: 768px) {
+    .nav-toggle { display: inline-flex; align-items: center; justify-content: center; flex-direction: column; gap: 5px; width: 44px; height: 44px; border-radius: 999px; background: rgba(2, 4, 3, 0.06); cursor: pointer; }
+    .nav-toggle span { display: block; width: 20px; height: 2px; border-radius: 999px; background: #020403; }
+    .nav-links { position: absolute; top: calc(100% + 12px); right: 0; flex-direction: column; align-items: flex-start; gap: 14px; padding: 18px 20px; border-radius: 18px; background: rgba(249, 254, 255, 0.96); box-shadow: 0 16px 40px rgba(2, 4, 3, 0.12); display: none; min-width: 170px; }
+    #nav-toggle:checked ~ .nav-links { display: flex; }
+    .nav-links a { font-size: 18px; }
+  }
   @keyframes lv-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 </style>
 </helmet>
@@ -31,11 +40,19 @@
 
     <header style="position: sticky; top: 0; z-index: 20; display: flex; align-items: center; justify-content: space-between; gap: 32px; padding: 26px clamp(20px, 5vw, 64px)">
       <a href="#top" style="display: flex; align-items: center"><img src="uploads/logoloomvale.svg" alt="loomvale." style="height: 21px; width: auto; display: block"></a>
-      <nav style="display: flex; align-items: center; gap: clamp(20px, 3vw, 44px)">
-        <a href="#services" style="font-size: 21px; font-weight: 700; letter-spacing: -0.01em; text-decoration: none" style-hover="text-decoration: underline; text-underline-offset: 4px">services</a>
-        <a href="#about" style="font-size: 21px; font-weight: 700; letter-spacing: -0.01em; text-decoration: none" style-hover="text-decoration: underline; text-underline-offset: 4px">about</a>
-        <a href="#contact" style="font-size: 21px; font-weight: 700; letter-spacing: -0.01em; text-decoration: none" style-hover="text-decoration: underline; text-underline-offset: 4px">contact</a>
-      </nav>
+      <div style="position: relative; display: flex; align-items: center">
+        <input type="checkbox" id="nav-toggle" aria-label="Toggle navigation" style="display: none">
+        <label for="nav-toggle" class="nav-toggle" aria-label="Open navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+        <nav class="nav-links">
+          <a href="#services" style="font-size: 21px; font-weight: 700; letter-spacing: -0.01em; text-decoration: none" style-hover="text-decoration: underline; text-underline-offset: 4px">services</a>
+          <a href="#about" style="font-size: 21px; font-weight: 700; letter-spacing: -0.01em; text-decoration: none" style-hover="text-decoration: underline; text-underline-offset: 4px">about</a>
+          <a href="#contact" style="font-size: 21px; font-weight: 700; letter-spacing: -0.01em; text-decoration: none" style-hover="text-decoration: underline; text-underline-offset: 4px">contact</a>
+        </nav>
+      </div>
     </header>
 
     <div style="position: relative; z-index: 2; flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: clamp(60px, 9vh, 120px) clamp(20px, 5vw, 64px) clamp(70px, 10vh, 130px)">
@@ -90,7 +107,7 @@
           <button type="button" onClick="{{ ind.select }}" onMouseEnter="{{ ind.select }}" style="{{ ind.style }}">{{ ind.name }}</button>
         </sc-for>
       </div>
-      <div style="flex: 1 1 56%; position: relative; border-radius: 20px; overflow: hidden; background: rgba(2, 4, 3, 0.00); min-height: clamp(240px, 34vw, 460px)">
+      <div style="flex: 1 1 56%; position: relative; border-radius: 20px; overflow: hidden; background: #F9FEFF; min-height: clamp(240px, 34vw, 460px)">
         <div style="position: absolute; inset: 0; transition: opacity 380ms ease; opacity: {{ panel.robotics }}"><image-slot id="lv-robotics" shape="rect" src="uploads/card.png" placeholder="Robotics — product photo"></image-slot></div>
         <div style="position: absolute; inset: 0; transition: opacity 380ms ease; opacity: {{ panel.ai }}"><image-slot id="lv-ai" shape="rect" src="uploads/star.png" placeholder="AI — abstract particle graphic"></image-slot></div>
         <div style="position: absolute; inset: 0; transition: opacity 380ms ease; opacity: {{ panel.biotech }}"><image-slot id="lv-biotech" shape="rect" src="uploads/pill.png" placeholder="Biotech — lab imagery"></image-slot></div>
